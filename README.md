@@ -144,3 +144,57 @@ El proceso implementado considera las siguientes etapas:
 La automatización implementada permitió ejecutar correctamente las dos pruebas unitarias desarrolladas, obteniendo un 100% de éxito, sin errores ni fallos.
 
 Además, el uso de GitHub Actions permite automatizar la validación del proyecto durante el proceso de integración continua, mientras que Maven Surefire permite generar un reporte navegable con los resultados de las pruebas.
+
+## Automatización de pruebas
+
+El proyecto implementa un proceso de automatización de pruebas utilizando Maven, JUnit, Cucumber y GitHub Actions.
+
+### Pruebas unitarias
+
+Las pruebas unitarias fueron desarrolladas con JUnit y se ejecutan mediante Maven utilizando:
+
+mvn test
+
+### Pruebas BDD
+
+Se incorporaron pruebas BDD utilizando Cucumber y lenguaje Gherkin.
+
+Los escenarios se encuentran definidos en:
+
+src/test/resources/features/calculadora.feature
+
+Las definiciones de pasos se encuentran en:
+
+src/test/java/cl/iplacex/automatizacion/steps/CalculadoraSteps.java
+
+### Reporte Cucumber
+
+La ejecución de las pruebas BDD genera automáticamente un reporte HTML:
+
+target/cucumber-report.html
+
+Este reporte permite visualizar los escenarios ejecutados y comprobar cuáles fueron aprobados.
+
+### Pruebas de rendimiento
+
+Se implementó una prueba de rendimiento utilizando k6 para evaluar el comportamiento de las solicitudes HTTP.
+
+La ejecución permitió obtener métricas como:
+
+- Cantidad de solicitudes HTTP.
+- Throughput.
+- Latencia promedio.
+- Latencia P95.
+- Porcentaje de errores.
+
+### Integración continua
+
+El proyecto utiliza GitHub Actions para ejecutar automáticamente las pruebas mediante el workflow:
+
+.github/workflows/ci.yml
+
+Esto permite validar los cambios realizados antes de integrarlos a la rama principal y generar artefactos con los resultados de las pruebas.
+
+### Métricas
+
+Los resultados obtenidos durante las pruebas permiten visualizar el estado general de la automatización, incluyendo escenarios BDD, solicitudes HTTP, throughput, latencia y errores.

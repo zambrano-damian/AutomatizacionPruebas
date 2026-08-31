@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Métricas de Pruebas</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .valor {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .estado {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Dashboard de Métricas de Pruebas</h1>
+
+<div class="contenedor">
+
+    <div class="tarjeta">
+        <h3>Escenarios BDD</h3>
+        <div class="valor">4 / 4</div>
+        <div class="estado">100% exitosos</div>
+    </div>
+
+    <div class="tarjeta">
+        <h3>Solicitudes HTTP</h3>
+        <div class="valor">80</div>
+        <div>ejecutadas</div>
+    </div>
+
+    <div class="tarjeta">
+        <h3>Throughput</h3>
+        <div class="valor">7,15</div>
+        <div>solicitudes/segundo</div>
+    </div>
+
+    <div class="tarjeta">
+        <h3>Latencia promedio</h3>
+        <div class="valor">138,88 ms</div>
+    </div>
+
+    <div class="tarjeta">
+        <h3>Latencia P95</h3>
+        <div class="valor">310,78 ms</div>
+    </div>
+
+    <div class="tarjeta">
+        <h3>Errores HTTP</h3>
+        <div class="valor">0%</div>
+        <div class="estado">Sin errores</div>
+    </div>
+
+</div>
+
+</body>
+</html>
