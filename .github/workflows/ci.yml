@@ -29,3 +29,9 @@ jobs:
         with:
           name: reporte-pruebas-surefire
           path: target/reports/
+
+      - name: Publicar reporte BDD de Cucumber
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-bdd-cucumber
+          path: target/cucumber-report.html
