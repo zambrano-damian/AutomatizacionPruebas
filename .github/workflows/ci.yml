@@ -36,6 +36,13 @@ jobs:
           echo "Iniciando despliegue de la version validada"
           echo "Deployment completado correctamente"
 
+      - name: Simulacion de rollback
+        if: failure()
+        run: |
+          echo "Se detecto un fallo durante el proceso"
+          echo "Iniciando rollback a la ultima version estable"
+          echo "Rollback completado correctamente"    
+
       - name: Publicar reporte de pruebas
         uses: actions/upload-artifact@v4
         with:
