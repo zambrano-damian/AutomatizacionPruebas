@@ -27,6 +27,15 @@ jobs:
       - name: Ejecutar pruebas automatizadas
         run: mvn test surefire-report:report
 
+      - name: Acceptance Test Gate
+        run: mvn test
+
+      - name: Deployment simulado
+        run: |
+          echo "Acceptance Test Gate aprobado"
+          echo "Iniciando despliegue de la version validada"
+          echo "Deployment completado correctamente"
+
       - name: Publicar reporte de pruebas
         uses: actions/upload-artifact@v4
         with:
